@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<div data-bb-type="screen" data-bb-effect="fade">
+	<div data-bb-type="title" data-bb-caption="Favorites"></div>
+	<div data-bb-type="round-panel" style="margin-top:10px;" id="pbPanel">
+		<div data-bb-type="panel-header">Default Picks</div>
+		<div id="numPicks" style="width: 90%; padding-left: 25px">
+			<div style="float: left; width: 150 px;">
+				<label id="numDraw" >5</label>
+			</div>
+			<div style="width: 100%;">
+				<input type="range" id="rngNumDraw" min="1" max="25" value="5" onchange="updateNumDrawLabel();" >
+			</div>
+		</div>
+	</div>
+	<div data-bb-type="round-panel" style="margin-top:10px;">
+		<div data-bb-type="panel-header">Toggles</div>
+		<div style="float: left">Play Sound</div><div data-bb-type="toggle" data-bb-checked="true" data-bb-on="Yes" data-bb-off="No" style="float: right"></div>
+		<div style="clear: both"></div>
+		<hr>
+		<div style="float: left">Show Animation</div><div data-bb-type="toggle" data-bb-checked="true" data-bb-on="Yes" data-bb-off="No" style="float: right"></div>
+		<div style="clear: both"></div>
+	</div>
+	<div data-bb-type="round-panel" style="margin-top:10px;">
+		<div data-bb-type="panel-header">About</div>
+		<div data-bb-type="text-arrow-list" id="policypanel">
+			<div data-bb-type="item" id="privacy" onclick="alert('click')">Privacy Policy</div>
+		</div>
+	</div>
+		<div class="centerOuter">
+			<div id="actionButtons" class="centerInner" style="clear: both">
+				<input type="button" id="btnSave" value="Save" onclick="saveDraw();" class="btnGreen">
+				<input type="button" id="btnCancel" value="Cancel" class="btnRed" onclick="loadPage(0);">
+			</div>
+		</div>
+	<div data-bb-type="action-bar" data-bb-tab-style="highlight" >
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/LottoBall.png" onclick="loadPage(0);">Draw Numbers</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Favorite.png" onclick="loadPage(1);">Favorites</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/MapMarker.png" onclick="loadPage(2);">Add Favorites</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Settings.png" data-bb-selected='true' onclick="loadPage(3);">Settings</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<div data-bb-type="screen" data-bb-effect="fade">
+	<script id="core" src="scripts/zlDraw.js"></script>	
+	<div data-bb-type="title" id="divTitle" data-bb-caption="Draw Numbers"></div>
+	<div id="numPicks" style="width: 90%; padding-left: 25px">
+		<div style="float: left; width: 150 px;"><label id="numDraw" >0</label></div><div style="width: 100%;"><input type="range" id="rngNumDraw" min="1" max="25" value="5" onchange="updateNumDrawLabel();" ></div>
+	</div>
+	<div class="centerOuter" id="divButtons">
+	<div class="centerInner"><input type="button" style="float: left; clear: both;" value="PowerBall" onclick="doTheWork(getNumDraws(),1,1);" class="btnBlue"><input type="button" style="float: left" value="MegaMillions" onclick="doTheWork(getNumDraws(),0,1);" class="btnBlue"></div>
+	</div>
+	<div data-bb-type="scroll-panel" id="scrollPanel" style="height: 750px">
+	<div class="centerOuter">
+	<div id="numberDiv" class="centerInner"></div>
+	</div>
+	</div>
+	<div data-bb-type="action-bar" data-bb-tab-style="highlight" id="divActionBar">
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/LottoBall.png" data-bb-selected='true' onclick="loadPage(0);">Draw Numbers</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Favorite.png" onclick="loadPage(1);">Favorites</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/MapMarker.png" onclick="loadPage(2);">Add Favorites</div>
+	    <div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Settings.png" onclick="loadPage(3);">Settings</div>
+	</div>
+</div>

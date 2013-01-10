@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<div data-bb-type="screen" data-bb-effect="fade">
+	<script id="core" src="scripts/zlFavs.js"></script>
+	<div data-bb-type="title" id="divTitle" data-bb-caption="Favorites"></div>
+	<div data-bb-type="round-panel" style="margin-top:10px;" id="pbPanel">
+		
+		<div data-bb-type="panel-header">
+			Powerball
+		</div>
+		<div data-bb-type="image-list" id="pbArrow" data-bb-context="true"></div>
+	</div>
+	<div data-bb-type="round-panel" style="margin-top:10px;">
+		<div data-bb-type="panel-header">
+			Mega Millions
+		</div>
+		<div data-bb-type="image-list" id="mmArrow" data-bb-context="true"></div>
+	</div>
+	<div data-bb-type="action-bar" data-bb-tab-style="highlight" >
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/LottoBall.png" onclick="loadPage(0);">
+			Draw Numbers
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Favorite.png" data-bb-selected='true' onclick="loadPage(1);">
+			Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/MapMarker.png" onclick="loadPage(2);">
+			Add Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Settings.png" onclick="loadPage(3);">
+			Settings
+		</div>
+	</div>
+	<div id="contextMenu" data-bb-type="context-menu">
+		<div data-bb-type="action" data-bb-img="images/actionBar/cog_dark_theme.png">
+			Delete
+		</div>
+		<div data-bb-type="action" data-bb-img="images/actionBar/cog_dark_theme.png">
+			View
+		</div>
+	</div>
+
+</div>
+<div data-bb-type="screen" data-bb-effect="fade" id="detailPage">
+	<script id="core" src="scripts/zlDrawDetail.js"></script>
+	<div data-bb-type="title" id="divSaveTitle" data-bb-caption="Favorites"></div>
+	<div id="divSaveName"></div>
+	<input type="button" value="pop screen" onclick="bb.popScreen();">
+	<div data-bb-type="pill-buttons" id="divButtons">
+		<div data-bb-type="pill-button" data-bb-selected="true" id="pbPill" onclick="lclIsPB=1;">
+			PowerBall
+		</div>
+		<div data-bb-type="pill-button" id="mmPill" onclick="lclIsPB=0;">
+			Mega Millions
+		</div>
+	</div>
+
+	<div data-bb-type="scroll-panel" id="scrollPanel" style="height: 800px">
+		<div class="centerOuter">
+			<div id="numberDiv" class="centerInner"></div>
+		</div>
+	</div>
+	<div class="centerOuter" id="divDelete">
+		<div class="centerInner">
+			<input type="button" class="btnRed" value="Delete Favorite" id="btnDelete" onclick="deleteFav();">
+		</div>
+	</div>
+
+	<div data-bb-type="action-bar" data-bb-tab-style="highlight" id="divActionBar">
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/LottoBall.png" onclick="loadPage(0);">
+			Draw Numbers
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Favorite.png" onclick="loadPage(1);">
+			Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/MapMarker.png" onclick="loadPage(2);">
+			Add Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Settings.png" onclick="loadPage(3);">
+			Settings
+		</div>
+	</div>
+
+</div>

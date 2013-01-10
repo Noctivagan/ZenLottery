@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<div data-bb-type="screen" data-bb-effect="fade">
+	<script id="addFav" src="scripts/zlAddFav.js"></script>
+	<div data-bb-type="title" data-bb-caption="Add to Favorites"></div>
+	<div data-bb-type="round-panel" style="margin-top:10px;">
+		<div id="favTitle">
+			<p>
+				Enter the name for the Favorite
+			</p>
+			<input type="text" id="txtFavorite" name="txtFavorite" placeholder="Name of Favorite">
+		</div>
+		<div id="numPicks" style="width: 90%; padding-left: 25px">
+			<div style="float: left; width: 150 px;">
+				<label id="numDraw" >0</label>
+			</div>
+			<div style="width: 100%;">
+				<input type="range" id="rngNumDraw" min="1" max="25" value="5" onchange="updateNumDrawLabel();" >
+			</div>
+		</div>
+		<div data-bb-type="pill-buttons">
+			<div data-bb-type="pill-button" data-bb-selected="true" onclick="lclIsPB=1;">
+				PowerBall
+			</div>
+			<div data-bb-type="pill-button" onclick="lclIsPB=0;">
+				Mega Millions
+			</div>
+		</div>
+		<div class="centerOuter">
+			<div id="actionButtons" class="centerInner" style="clear: both">
+				<input type="button" id="btnSave" value="Save" onclick="saveDraw();" class="btnGreen">
+				<input type="button" id="btnCancel" value="Cancel" class="btnRed" onclick="loadPage(0);">
+			</div>
+		</div>
+	</div>
+	<div data-bb-type="action-bar" data-bb-tab-style="highlight" >
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/LottoBall.png" onclick="loadPage(0);">
+			Draw Numbers
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Favorite.png" onclick="loadPage(1);">
+			Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/MapMarker.png" data-bb-selected='true' onclick="loadPage(2);">
+			Add Favorites
+		</div>
+		<div data-bb-type="action" data-bb-style="tab" data-bb-img="images/Settings.png" onclick="loadPage(3);">
+			Settings
+		</div>
+	</div>
+</div>

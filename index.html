@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="x-blackberry-defaultHoverEffect" content="false" />
+		<title>index</title>
+		
+		<meta name="description" content="" />
+		<meta name="author" content="thanderson" />
+
+<!-- 		<meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=no,target-densitydpi=device-dpi" /> -->
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link  rel="stylesheet" type="text/css" href="css/bbui-0.9.4.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+		<script src="scripts/webworks-1.0.1.17.js"></script>
+		<script type="text/javascript" src="scripts/zlCore.js"></script>
+		<script src="scripts/zlFavs.js"></script>
+		<script src="scripts/zlDrawDetail.js"></script>
+		<script src="scripts/zlCore.js"></script>
+		<script src="js/src/alice.core.js"></script>
+		<script src="js/src/alice.plugins.cheshire.js"></script>
+		<script type="text/javascript" src="scripts/bbui-0.9.4.js"></script>
+		<script type="text/javascript">
+			//Global variables
+			var gblNumDraws;
+			var gblSeed = 0;
+			var drawDatabase = null;
+			var gblDrawID = 0;
+
+			// For some fun I did some random color scheme generation :o)
+			var bb10HighlightColor, bb10AccentColor, randomNumber;
+			bb10HighlightColor = '#00ff03';
+			bb10AccentColor = '#008001';
+			window.addEventListener("load", function(e) {
+				document.addEventListener("webworksready", function(e) {
+
+					// You must call init on bbUI before any other code loads.
+					// If you want default functionality simply don't pass any parameters.. bb.init();
+					bb.init({
+						highlightColor : bb10HighlightColor,
+						actionBarDark : true,
+						controlsDark : true,
+						listsDark : false,
+						bb10ForPlayBook : true,
+						// Fires "before" styling is applied and "before" the screen is inserted in the DOM
+						onscreenready : function(element, id) {
+							
+							if (id == 'draw' || id == 'addFav') {
+								//updateNumDrawLabel();
+								//alert('You be at Draw');
+							}
+							
+							buildActionBar(element, id);
+							
+						},
+						// Fires "after" styling is applied and "after" the screen is inserted in the DOM
+						ondomready : function(element, id) {
+							
+							
+							if (id == 'draw' || id == 'addfav') {
+								initNumDrawLabel();
+								setScrollHeight();
+								//alert('You be at Draw after.');
+							}
+
+							if (id == 'favs') {
+								initFavs(element);
+							}
+
+							if (id == 'drawDetail') {
+								initDD();
+								setScrollHeight();
+								initTouch();
+							}
+
+							if (id == 'splash') {
+								bounceAlice('IMG1');
+							}
+						}
+					});
+
+					initDB();
+
+					window.onorientationchange = setScrollHeight;
+					
+				}, false);
+			}, false);
+
+		</script>
+
+	</head>
+	<body onload="bb.pushScreen('draw.html', 'draw');"></body>
+</html>
